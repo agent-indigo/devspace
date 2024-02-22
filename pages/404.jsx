@@ -2,7 +2,7 @@ import Image from "next/image"
 import Layout from "@/components/Layout"
 const NotFound = () => {
   return (
-    <Layout title='Not Found'>
+    <Layout title='Not Found | DevSpace'>
       <div className="flex flex-col items-center mt-20">
         <Image
             src='/images/logo.png'
