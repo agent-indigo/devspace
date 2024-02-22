@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import Layout from "@/components/Layout"
 import Post from '@/components/Post'
 import sortByDate from '@/utilities/sortByDate.mjs'
-const index = ({props: {posts}}) => {
+const index = ({posts}) => {
   return (
     <Layout title='Blog | DevSpace'>
       <h1 className='text-5xl border-b-4 p-5 font-bold' >All Posts</h1>
