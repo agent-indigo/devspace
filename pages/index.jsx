@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout"
-const page = () => {
+const index = () => {
   return (
-    <Layout>
+    <Layout title='Home | DevSpace'>
       <h1>Hello World!</h1>
     </Layout>
   )
 }
-export default page
+export default index

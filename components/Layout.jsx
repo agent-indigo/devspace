@@ -1,6 +1,5 @@
 import Head from "next/head"
 import Header from "./Header"
-import '../app/globals.css'
 const Layout = ({ title, keywords, description, children }) => {
   return (
     <>
