@@ -1,0 +1,20 @@
+# Use official Node.js image as the base image
+FROM node:iron
+
+# Set the working directory inside the container
+WORKDIR /code
+
+# Copy package.json and package-lock.json to the working directory
+COPY . /code/
+
+# Install dependencies
+RUN npm install
+
+# Build the Next.js app
+RUN npm run build
+
+# Expose the port Next.js is running on
+EXPOSE 3000
+
+# Command to run the Next.js app
+CMD ["npm", "start"]
