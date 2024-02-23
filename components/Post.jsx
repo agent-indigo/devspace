@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link"
-import Image from "next/image"
 import CategoryLabel from "./CategoryLabel"
 const Post = ({post}) => {
   return (
     <div className="w-full px-10 py-6 bg-white rounded-lg shadow-md mt-6">
-        <Image
+        <img
             src={post.frontMatter.cover_image}
             alt=''
             height={420}
@@ -30,7 +30,7 @@ const Post = ({post}) => {
                 className="text-gray-900 hover:text-blue-600"
             >Read more...</Link>
             <div className="flex items-center">
-                <Image
+                <img
                     src={post.frontMatter.author.image}
                     alt=''
                     className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"

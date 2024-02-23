@@ -1,10 +1,10 @@
-import Image from "next/image"
 import Layout from "@/components/Layout"
 const NotFound = () => {
   return (
     <Layout title='Not Found | DevSpace'>
       <div className="flex flex-col items-center mt-20">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
             src='/images/logo.png'
             width={70}
             height={70}
