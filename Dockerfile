@@ -2,10 +2,10 @@
 FROM node:iron
 
 # Set the working directory inside the container
-WORKDIR /code
+WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY . /code/
+COPY . /app/
 
 # Install dependencies
 RUN npm install
