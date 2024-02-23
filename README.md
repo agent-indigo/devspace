@@ -11,3 +11,7 @@ I made the following modifications:
 - Moved repeated heading and pagination code into a component and a utility respectively
 
 - Folded the HTML contents of the Header component into the Layout component because it wasn't used anywhere else
+
+- Added a Dockerfile
+
+- Other minor modifications
