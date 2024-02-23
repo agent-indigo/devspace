@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout"
 const NotFound = () => {
   return (
-    <Layout title='Not Found | DevSpace'>
+    <Layout title='Not Found'>
       <div className="flex flex-col items-center mt-20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
