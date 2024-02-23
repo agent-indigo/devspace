@@ -34,7 +34,7 @@ export const getStaticProps = async ({ params: { category_name } }) => {
   const categories = posts.map(post => post.frontMatter.category)
   const uniqueCategories = [...new Set(categories)]
   const postsInCategory = posts.filter(post => post.frontMatter.category.toLowerCase() === category_name)
-  const pageQty = Math.ceil(postsInCategory.length / process.env.POSTS_PER_PAGE)
+  const pageQty = Math.ceil(postsInCategory.length / process.env.PAGINATION || 12)
   const paginationLinks = pagination(1, pageQty, `/blog/category/${category_name}`)
   return {
     props: {
