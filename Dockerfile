@@ -4,7 +4,7 @@ FROM node:iron
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy application code to working directory
 COPY . /app/
 
 # Install dependencies
