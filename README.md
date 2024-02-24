@@ -10,7 +10,7 @@ I made the following modifications:
 
 - Moved repeated heading and pagination code into a component and a utility respectively
 
-- Folded the HTML contents of the Header component into the Layout component because it wasn't used anywhere else
+- Moved the HTML contents of components that were only imported once into the Layout component
 
 - Added a Dockerfile
 
