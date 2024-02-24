@@ -2,12 +2,12 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import CategoryList from '@/components/CategoryList'
-import pagination from '@/utilities/pagination.mjs'
+import pagination from '@/utilities/pagination.js'
 import PaginationHeading from '@/components/PaginationHeading'
 import Post from '@/components/Post'
 import Pagination from '@/components/Pagination'
-import sortByDate from '@/utilities/sortByDate.mjs'
-import getPosts from '@/utilities/getPosts.mjs'
+import sortByDate from '@/utilities/sortByDate.js'
+import getPosts from '@/utilities/getPosts.js'
 const Category = ({ posts, categoryName, categories, currentPage, pageQty }) => {
   return (
     <>

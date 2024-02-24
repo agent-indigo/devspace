@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "cache": "node scripts/cache.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -15,7 +15,8 @@
     "marked": "^12.0.0",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

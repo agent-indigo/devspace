@@ -2,11 +2,11 @@ import fs from 'fs'
 import path from 'path'
 import 'dotenv/config'
 import CategoryList from '@/components/CategoryList'
-import pagination from '@/utilities/pagination.mjs'
+import pagination from '@/utilities/pagination.js'
 import PaginationHeading from '@/components/PaginationHeading'
 import Post from '@/components/Post'
 import Pagination from '@/components/Pagination'
-import getPosts from '@/utilities/getPosts.mjs'
+import getPosts from '@/utilities/getPosts.js'
 const Blog = ({posts, pageQty, currentPage, categories}) => {
   return (
     <>

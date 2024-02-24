@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import sortByDate from '@/utilities/sortByDate.mjs'
+import sortByDate from '@/utilities/sortByDate.js'
 const getPosts = () => {
     const files = fs.readdirSync(path.join('posts'))
     const posts = files.map(filename => {
