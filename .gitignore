@@ -5,7 +5,7 @@
 posts/
 
 ### post images ###
-public/images/posts/
+/public/images/posts/
 
 ### cache ###
 cache/
