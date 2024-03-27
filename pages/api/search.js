@@ -1,16 +1,16 @@
-import fs from 'fs'
-import path from 'path'
+import {readdirSync, readFileSync} from 'fs'
+import {join} from 'path'
 import matter from 'gray-matter'
 const search = (request, response) => {
     const MODE = process.env.NODE_ENV || 'production'
     let posts
     if(MODE === 'production') {
-        posts = fs.readFileSync('../../cache/posts.json')
+        posts = readFileSync('../../cache/posts.json')
     } else {
-        const files = fs.readdirSync(path.join('posts'))
+        const files = readdirSync(join('posts'))
         posts = files.map(filename => {
             const slug = filename.replace('.md', '')
-            const MarkdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+            const MarkdownWithMeta = readFileSync(join('posts', filename), 'utf-8')
             const {data:frontMatter} = matter(MarkdownWithMeta)
             return {frontMatter, slug}
         })

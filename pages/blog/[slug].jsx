@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import fs from 'fs'
-import path from 'path'
+import {readdirSync, readFileSync} from 'fs'
+import {join} from 'path'
 import matter from 'gray-matter'
 import {marked} from 'marked'
 import Link from 'next/link'
@@ -40,12 +40,12 @@ const Article = ({frontMatter: {title, category, date, cover_image, author, auth
 }
 export default Article
 export const getStaticPaths = () => {
-    const files = fs.readdirSync(path.join('posts'))
-    const paths = files.map(filename => ({params: {slug: filename.replace('md', '')}}))
-    return {paths, fallback: false}
+  const files = readdirSync(join('posts'))
+  const paths = files.map(filename => ({params: {slug: filename.replace('md', '')}}))
+  return {paths, fallback: false}
 }
 export const getStaticProps = async ({params: {slug}}) => {
-    const MarkdownWithMeta = fs.readFileSync(path.join('posts', slug + '.md'), 'utf-8')
-    const {data:frontMatter, content} = matter(MarkdownWithMeta)
-    return {props: {frontMatter, content}}
+  const MarkdownWithMeta = readFileSync(join('posts', slug + '.md'), 'utf-8')
+  const {data:frontMatter, content} = matter(MarkdownWithMeta)
+  return {props: {frontMatter, content}}
 }

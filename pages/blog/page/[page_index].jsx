@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import {readdirSync} from 'fs'
+import {join} from 'path'
 import CategoryList from '@/components/CategoryList'
 import pagination from '@/utilities/pagination.js'
 import PaginationHeading from '@/components/PaginationHeading'
@@ -19,14 +19,14 @@ const Blog = ({posts, pageQty, currentPage, categories}) => {
 export default Blog
 const PAGINATION = process.env.PAGINATION || 12
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = readdirSync(join('posts'))
   const pageQty = Math.ceil(files.length / PAGINATION)
   let paths = []
   for(let i = 1; i <= pageQty; i++) paths.push({params: {page_index: i.toString()}})
   return {paths, fallback: false}
 }
 export const getStaticProps = async ({ params }) => {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = readdirSync(join('posts'))
   const page = parseInt(params && params.page_index || 1)
   const pageQty = Math.ceil(files.length / process.env.PAGINATION)
   const pageIndex = page - 1

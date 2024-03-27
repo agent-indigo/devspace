@@ -1,12 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/nextjs,node,macos,visualstudiocode,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=nextjs,node,macos,visualstudiocode,dotenv
 
-### posts ###
-posts/
-
-### post images ###
-/public/images/posts/
-
 ### cache ###
 cache/
 

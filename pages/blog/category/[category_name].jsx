@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import {readdirSync, readFileSync} from 'fs'
+import {join} from 'path'
 import matter from 'gray-matter'
 import CategoryList from '@/components/CategoryList'
 import pagination from '@/utilities/pagination.js'
@@ -20,9 +20,9 @@ const Category = ({posts, categoryName, categories, currentPage, pageQty}) => {
 }
 export default Category
 export const getStaticPaths = async () => {
-  const files = fs.readdirSync(path.join('posts'))
+  const files = readdirSync(join('posts'))
   const categories = files.map(filename => {
-    const MarkdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+    const MarkdownWithMeta = readFileSync(join('posts', filename), 'utf-8')
     const {data: frontMatter} = matter(MarkdownWithMeta)
     return frontMatter.category.toLowerCase()
   })
