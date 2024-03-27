@@ -12,6 +12,4 @@ I made the following modifications:
 
 - Moved the HTML contents of components that were only imported once into the Layout component
 
-- Added a Dockerfile
-
 - Other minor modifications

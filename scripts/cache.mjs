@@ -8,10 +8,7 @@ const cache = (() => {
             const slug = filename.replace('.md', '')
             const MarkdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
             const {data:frontMatter} = matter(MarkdownWithMeta)
-            return {
-                frontMatter,
-                slug
-            }
+            return {frontMatter, slug}
         })
         return JSON.stringify(posts)
     }

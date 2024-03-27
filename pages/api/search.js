@@ -1,11 +1,10 @@
 import fs from 'fs'
 import path from 'path'
-import 'dotenv/config'
 import matter from 'gray-matter'
 const search = (request, response) => {
-    const DEBUG = process.env.DEBUG || 'false'
+    const MODE = process.env.NODE_ENV || 'production'
     let posts
-    if(DEBUG === 'false') {
+    if(MODE === 'production') {
         posts = fs.readFileSync('../../cache/posts.json')
     } else {
         const files = fs.readdirSync(path.join('posts'))
@@ -13,10 +12,7 @@ const search = (request, response) => {
             const slug = filename.replace('.md', '')
             const MarkdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
             const {data:frontMatter} = matter(MarkdownWithMeta)
-            return {
-                frontMatter,
-                slug
-            }
+            return {frontMatter, slug}
         })
     }
     const results = posts.filter(({frontMatter:{title, excerpt, category}}) =>

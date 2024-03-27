@@ -8,7 +8,7 @@ import Post from '@/components/Post'
 import Pagination from '@/components/Pagination'
 import sortByDate from '@/utilities/sortByDate.js'
 import getPosts from '@/utilities/getPosts.js'
-const Category = ({ posts, categoryName, categories, currentPage, pageQty }) => {
+const Category = ({posts, categoryName, categories, currentPage, pageQty}) => {
   return (
     <>
       <PaginationHeading title={`Posts in ${categoryName}`} categories={<CategoryList categories={categories}/>}>
@@ -23,13 +23,13 @@ export const getStaticPaths = async () => {
   const files = fs.readdirSync(path.join('posts'))
   const categories = files.map(filename => {
     const MarkdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
-    const { data: frontMatter } = matter(MarkdownWithMeta)
+    const {data: frontMatter} = matter(MarkdownWithMeta)
     return frontMatter.category.toLowerCase()
   })
-  const paths = categories.map(category => ({ params: { category_name: category } }))
-  return { paths, fallback: false }
+  const paths = categories.map(category => ({params: {category_name: category}}))
+  return {paths, fallback: false}
 }
-export const getStaticProps = async ({ params: { category_name } }) => {
+export const getStaticProps = async ({params: {category_name}}) => {
   const posts = getPosts()
   const categories = posts.map(post => post.frontMatter.category)
   const uniqueCategories = [...new Set(categories)]

@@ -1,5 +1,5 @@
-import Layout from "./Layout"
-const PaginationHeading = ({ title, children }) => {
+import Layout from './Layout'
+const PaginationHeading = ({title, children}) => {
     return (
         <Layout title={title}>
             <div className="flex justify-between">

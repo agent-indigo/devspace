@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 const CategoryList = ({categories}) => {
   return (
     <div className="w-full p-5 bg-white rounded-lg shadow-md mt-6">
@@ -7,11 +7,11 @@ const CategoryList = ({categories}) => {
       </h3>
       <ul className="divide-y divide-gray-300">
         {categories.map((category, index) => (
-            <Link
-                key={index}
-                href={`/blog/category/${category.toLowerCase()}`}
-                className="p-4 cursor-pointer hover:bg-gray-50"
-            >{category}</Link>
+          <Link
+            key={index}
+            href={`/blog/category/${category.toLowerCase()}`}
+            className="p-4 cursor-pointer hover:bg-gray-50"
+          >{category}</Link>
         ))}
       </ul>
     </div>

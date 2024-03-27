@@ -20,4 +20,4 @@ build/
 # vercel
 .vercel
 # posts
-posts/
+**/posts/

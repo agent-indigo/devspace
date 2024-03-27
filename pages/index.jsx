@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Layout from "@/components/Layout"
+import Layout from '@/components/Layout'
 import Post from '@/components/Post'
 import getPosts from '@/utilities/getPosts.js'
 const index = ({posts}) => {
