@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Post from '@/components/Post'
-import getPosts from '@/utilities/getPosts.js'
+import getPosts from '@/utilities/getPosts'
 const index = ({posts}) => {
   return (
     <Layout title='Home'>

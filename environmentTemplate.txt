@@ -1,2 +1,2 @@
-NODE_ENV = 
-PAGINATION = 
+export const NODE_ENV = ''
+export const POSTS_PER_PAGE = 

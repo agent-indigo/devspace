@@ -1,8 +1,9 @@
 import {readdirSync, readFileSync} from 'fs'
 import {join} from 'path'
 import matter from 'gray-matter'
+import {NODE_ENV} from '@/env'
 const search = (request, response) => {
-    const MODE = process.env.NODE_ENV || 'production'
+    const MODE = NODE_ENV || 'production'
     let posts
     if(MODE === 'production') {
         posts = readFileSync('../../cache/posts.json')

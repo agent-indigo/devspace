@@ -4,8 +4,8 @@
 ### cache ###
 cache/
 
-### dotenv ###
-.env
+### environment variables ###
+env.js
 
 ### macOS ###
 # General

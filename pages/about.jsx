@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Layout from '@/components/Layout'
 const about = () => {
   return (
